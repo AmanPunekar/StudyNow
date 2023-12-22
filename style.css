@@ -219,6 +219,9 @@ body {
   }
   .section-title {
     padding-left: 0;
+    line-height: 4.2rem;
+    margin-top: .8rem;
+    margin-bottom: .8rem;
   }
   .button-group {
     justify-content: start;
