@@ -41,15 +41,23 @@
           <h1>Choose Your Plan</h1>
           <p>Empower Your Learning Journey with Budget-Friendly Brilliance.</p>
         </div>
-        <div class="price-toggler">
-          <span class="month active">Monthly</span>
-          <span class="year">Yearly</span>
+        <div class="tog-box">
+          <div class="price-toggler">
+            <span class="month active">Monthly</span>
+            <span class="year">Yearly</span>
+          </div>
+          <div class="usd-toggler">
+            <span class="usd active">USD</span>
+            <span class="inr">INR</span>
+          </div>
         </div>
         <div class="price_cards">
           <div class="card">
             <div class="card-up">
               <span>Free</span>
-              <h1 class="card-price">$0</h1>
+              <h1 class="card-price monthly">
+                0.00<span class="symbol" style="color: var(--gray)"></span>
+              </h1>
             </div>
             <div class="offering">
               <ul>
@@ -63,9 +71,11 @@
           </div>
           <div class="card">
             <div class="card-up">
-              <span>Standard</span>
-              <h1 class="card-price monthly">$9.99</h1>
-              <h1 class="card-price annualy">$29.49</h1>
+              <span>Standard Plan Price</span>
+
+              <h1 class="card-price monthly">
+                6.29<span class="symbol"></span>
+              </h1>
             </div>
             <div class="offering">
               <ul>
@@ -80,9 +90,10 @@
           </div>
           <div class="card">
             <div class="card-up">
-              <span>Premium</span>
-              <h1 class="card-price monthly">$39.99</h1>
-              <h1 class="card-price annualy">$79.99</h1>
+              <span>Premium Plan Price</span>
+              <h1 class="card-price monthly">
+                12.99<span class="symbol"></span>
+              </h1>
             </div>
             <div class="offering">
               <ul>
@@ -96,9 +107,10 @@
           </div>
           <div class="card">
             <div class="card-up">
-              <span>Lifetime</span>
-              <h1 class="card-price monthly">$69.00</h1>
-              <h1 class="card-price annualy">$109.99</h1>
+              <span>Lifetime Plan Price</span>
+              <h1 class="card-price monthly">
+                24.99<span class="symbol"></span>
+              </h1>
             </div>
             <div class="offering">
               <ul>
@@ -222,29 +234,69 @@
     <script>
       let month = document.querySelector(".month");
       let year = document.querySelector(".year");
+      let amountElements = document.querySelectorAll(".card-price");
       let monthAmount = document.querySelectorAll(".monthly");
       let yearAmount = document.querySelectorAll(".annualy");
+      let usd = document.querySelector(".usd");
+      let inr = document.querySelector(".inr");
+      let symbol = document.querySelector(".symbol");
 
       year.onclick = () => {
         year.classList.add("active");
         month.classList.remove("active");
-        monthAmount.forEach((mo) => {
-          mo.style.display = "none";
+        amountElements.forEach((amount) => {
+          let currentAmount = parseFloat(amount.innerText);
+          amount.innerText = (currentAmount * 12).toFixed(2);
         });
-        yearAmount.forEach((yr) => {
-          yr.style.display = "block";
-        });
+        year.style.pointerEvents = "none";
+        month.style.pointerEvents = "all";
       };
 
       month.onclick = () => {
         year.classList.remove("active");
         month.classList.add("active");
+        amountElements.forEach((amount) => {
+          let currentAmount = parseFloat(amount.innerText);
+          amount.innerText = (currentAmount / 12).toFixed(2);
+        });
+        month.style.pointerEvents = "none";
+        year.style.pointerEvents = "all";
+      };
+
+      // USD to INR
+      inr.onclick = () => {
+        inr.classList.add("active");
+        usd.classList.remove("active");
         monthAmount.forEach((mo) => {
-          mo.style.display = "block";
+          let convertedAmount = (parseFloat(mo.innerHTML) * 83.12).toFixed(2);
+          mo.innerHTML = convertedAmount + (symbol.innerHTML = "₹"); // Assuming 1 USD = 83.12 INR
         });
         yearAmount.forEach((yr) => {
-          yr.style.display = "none";
+          let convertedAmount = (parseFloat(yr.innerHTML) * 83.12 * 12).toFixed(
+            2
+          );
+          yr.innerHTML = convertedAmount + (symbol.innerHTML = "₹");
         });
+
+        inr.style.pointerEvents = "none";
+        usd.style.pointerEvents = "all";
+      };
+
+      usd.onclick = () => {
+        inr.classList.remove("active");
+        usd.classList.add("active");
+        monthAmount.forEach((mo) => {
+          let convertedAmount = (parseFloat(mo.innerHTML) / 83.12).toFixed(2);
+          mo.innerHTML = convertedAmount + (symbol.innerHTML = "$");
+        });
+        yearAmount.forEach((yr) => {
+          let convertedAmount = (parseFloat(yr.innerHTML) / 83.12 / 12).toFixed(
+            2
+          );
+          yr.innerHTML = convertedAmount + (symbol.innerHTML = "$");
+        });
+        usd.style.pointerEvents = "none";
+        inr.style.pointerEvents = "all";
       };
     </script>
   </body>

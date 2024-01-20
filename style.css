@@ -708,10 +708,9 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 .price-heading {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .price-heading h1 {
   font-size: 2.5rem;
@@ -746,7 +745,7 @@ ul {
   border: 1px solid var(--accent-color);
 }
 .card-up {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .card-up span {
   font-size: 1.3rem;
@@ -787,36 +786,48 @@ ul {
   .price_cards {
     flex-direction: column;
   }
+  .tog-box {
+    flex-direction: column;
+  }
 }
 /* toggle btn  */
+.tog-box {
+  width: 40rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+}
 
-.price-toggler {
-  margin: 0rem 0rem 1rem 0rem;
+.price-toggler,
+.usd-toggler {
+  margin: 0rem 1rem 1rem 0rem;
   display: inline-block;
+  align-self: center;
   padding: 5px;
   border: none;
   border-radius: 1.5rem;
-  background-color: var(--link-color);
+  background-color: var(--primary-color);
   box-shadow: 0.5px 0.5px 2px black;
-  transition: background-color 1s, color 1s, box-shadow 1s; 
 }
-
-.price-toggler span {
+.usd-toggler {
+  width: 241px;
+}
+.price-toggler span,
+.usd-toggler span {
   border-radius: 1.5rem;
   padding: 7px 30px;
   color: white;
   font-size: 1rem;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 1s, color 1s;
+}
+.usd-toggler span {
+  padding: 7px 45px;
 }
 
-.price-toggler span.active {
+.price-toggler span.active,
+.usd-toggler span.active {
   background-color: var(--background-color);
   color: black;
   transition: background-color 1s, color 1s;
-}
-
-.annualy {
-  display: none;
 }
