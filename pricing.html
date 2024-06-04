@@ -74,7 +74,7 @@
               <span>Standard Plan Price</span>
 
               <h1 class="card-price monthly">
-                6.29<span class="symbol"></span>
+               3.99<span class="symbol"></span>
               </h1>
             </div>
             <div class="offering">
@@ -92,7 +92,7 @@
             <div class="card-up">
               <span>Premium Plan Price</span>
               <h1 class="card-price monthly">
-                12.99<span class="symbol"></span>
+                7.99<span class="symbol"></span>
               </h1>
             </div>
             <div class="offering">
@@ -109,7 +109,7 @@
             <div class="card-up">
               <span>Lifetime Plan Price</span>
               <h1 class="card-price monthly">
-                24.99<span class="symbol"></span>
+                16.99<span class="symbol"></span>
               </h1>
             </div>
             <div class="offering">
@@ -228,7 +228,7 @@
         </div>
       </footer>
       <div class="footer-copyright">
-        © 2023 - Present StudyNow. All rights reserved.
+        © 2024 - Present StudyNow. All rights reserved.
       </div>
     </div>
     <script>
@@ -269,13 +269,15 @@
         usd.classList.remove("active");
         monthAmount.forEach((mo) => {
           let convertedAmount = (parseFloat(mo.innerHTML) * 83.12).toFixed(2);
-          mo.innerHTML = convertedAmount + (symbol.innerHTML = "₹"); // Assuming 1 USD = 83.12 INR
+          mo.innerHTML = convertedAmount ;
+          // + (symbol.innerHTML = "₹") // Assuming 1 USD = 83.12 INR
         });
         yearAmount.forEach((yr) => {
           let convertedAmount = (parseFloat(yr.innerHTML) * 83.12 * 12).toFixed(
             2
           );
-          yr.innerHTML = convertedAmount + (symbol.innerHTML = "₹");
+          yr.innerHTML = convertedAmount ;
+          // + (symbol.innerHTML = "₹");
         });
 
         inr.style.pointerEvents = "none";
@@ -287,13 +289,15 @@
         usd.classList.add("active");
         monthAmount.forEach((mo) => {
           let convertedAmount = (parseFloat(mo.innerHTML) / 83.12).toFixed(2);
-          mo.innerHTML = convertedAmount + (symbol.innerHTML = "$");
+          mo.innerHTML = convertedAmount ;
+          // + (symbol.innerHTML = "$");
         });
         yearAmount.forEach((yr) => {
           let convertedAmount = (parseFloat(yr.innerHTML) / 83.12 / 12).toFixed(
             2
           );
-          yr.innerHTML = convertedAmount + (symbol.innerHTML = "$");
+          yr.innerHTML = convertedAmount ;
+          // + (symbol.innerHTML = "$");
         });
         usd.style.pointerEvents = "none";
         inr.style.pointerEvents = "all";
