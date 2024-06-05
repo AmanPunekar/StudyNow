@@ -20,9 +20,9 @@
         </a>
         <nav class="nav">
           <a href="index.html" class="nav-link">Home</a>
-          <a href="features.html" class="nav-link">Features</a>
-          <a href="pricing.html" class="nav-link">Pricing</a>
           <a href="blog.html" class="nav-link">Blog</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="features.html" class="nav-link">Features</a>
           <a href="about.html" class="nav-link">About</a>
         </nav>
         <a href="#contact" class="contact-button"> Contact Us </a>
@@ -74,7 +74,7 @@
               <span>Standard Plan Price</span>
 
               <h1 class="card-price monthly">
-               3.99<span class="symbol"></span>
+                3.99<span class="symbol"></span>
               </h1>
             </div>
             <div class="offering">
@@ -269,14 +269,14 @@
         usd.classList.remove("active");
         monthAmount.forEach((mo) => {
           let convertedAmount = (parseFloat(mo.innerHTML) * 83.12).toFixed(2);
-          mo.innerHTML = convertedAmount ;
+          mo.innerHTML = convertedAmount;
           // + (symbol.innerHTML = "₹") // Assuming 1 USD = 83.12 INR
         });
         yearAmount.forEach((yr) => {
           let convertedAmount = (parseFloat(yr.innerHTML) * 83.12 * 12).toFixed(
             2
           );
-          yr.innerHTML = convertedAmount ;
+          yr.innerHTML = convertedAmount;
           // + (symbol.innerHTML = "₹");
         });
 
@@ -289,14 +289,14 @@
         usd.classList.add("active");
         monthAmount.forEach((mo) => {
           let convertedAmount = (parseFloat(mo.innerHTML) / 83.12).toFixed(2);
-          mo.innerHTML = convertedAmount ;
+          mo.innerHTML = convertedAmount;
           // + (symbol.innerHTML = "$");
         });
         yearAmount.forEach((yr) => {
           let convertedAmount = (parseFloat(yr.innerHTML) / 83.12 / 12).toFixed(
             2
           );
-          yr.innerHTML = convertedAmount ;
+          yr.innerHTML = convertedAmount;
           // + (symbol.innerHTML = "$");
         });
         usd.style.pointerEvents = "none";
