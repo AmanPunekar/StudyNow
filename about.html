@@ -25,7 +25,25 @@
           <a href="features.html" class="nav-link">Features</a>
           <a href="about.html" class="nav-link">About</a>
         </nav>
-        <a href="#contact" class="contact-button"> Contact Us </a>
+        <a class="contact-button" id="contactButton"> Contact Us </a>
+        <div id="contactForm" class="modal">
+          <div class="modal-content">
+            <span class="close-button" id="closeButton">&times;</span>
+            <form id="contactUsForm">
+              <h2>Contact Us</h2>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required />
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
         <button class="menu-button">
           <img
             src="./images/Hamburger.svg"
@@ -34,6 +52,142 @@
           />
         </button>
       </header>
+    </div>
+
+    <main class="main">
+      <section class="heading_about">
+        <h1>About Us</h1>
+        <p>
+          We believe that every student has the potential to excel. Our mission
+          is to provide students with the resources, tools, and support they
+          need to achieve their academic goals. Founded by a team of educators
+          and tech enthusiasts.
+        </p>
+        <div class="values">
+          <h2 style="color: #3f83f8">Our Values</h2>
+          <ul>
+            <li>
+              <b>Excellence:</b> Maintaining the highest standards in
+              educational content and delivery.
+            </li>
+            <li>
+              <b>Community:</b> Fostering a supportive and collaborative
+              learning community.
+            </li>
+            <li>
+              <b>Innovation:</b> Continuously improving our tools and resources
+              to meet the evolving needs of students.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-container">
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="comp-logo">
+            <a class="logo-link" href="#">
+              <img class="logo-svg" src="./images/StudyNow.svg" />
+              StudyNow
+            </a>
+          </div>
+          <p class="filler-text">Seamless Learning for Brighter Futures.</p>
+          <div class="social">
+            <a class="social-link" href="#">
+              <img src="./images/instagram.svg" class="social-icon" />
+            </a>
+            <a class="social-link">
+              <img src="./images/linkedin.svg" class="social-icon" />
+            </a>
+            <a class="social-link">
+              <img src="./images/Microsoft.svg" class="social-icon" />
+            </a>
+            <a class="social-link">
+              <img src="./images/twitter.svg" class="social-icon" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-grid">
+          <!-- column 1 -->
+          <div class="footer-grid-column">
+            <div class="footer-grid-heading">Products</div>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#overview" class="footer-link">Overview</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Solutions</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Pricing</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Customers</a>
+              </li>
+            </ul>
+          </div>
+          <!-- column 2 -->
+          <div class="footer-grid-column">
+            <div class="footer-grid-heading">Company</div>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#overview" class="footer-link">About</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Investor Relations</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Jobs</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Press</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <!-- column 3 -->
+          <div class="footer-grid-column">
+            <div class="footer-grid-heading">Support</div>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#overview" class="footer-link">Contact</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Documentation</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Chat</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <!-- column 4 -->
+          <div class="footer-grid-column">
+            <div class="footer-grid-heading">Legal</div>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#overview" class="footer-link">Terms of Service</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#overview" class="footer-link">Cookie Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-copyright">
+        © 2024 - Present StudyNow. All rights reserved.
+      </div>
+      <script src="contact.js"></script>
     </div>
   </body>
 </html>

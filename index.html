@@ -25,7 +25,25 @@
           <a href="features.html" class="nav-link">Features</a>
           <a href="about.html" class="nav-link">About</a>
         </nav>
-        <a href="#contact" class="contact-button"> Contact Us </a>
+        <a class="contact-button" id="contactButton"> Contact Us </a>
+        <div id="contactForm" class="modal">
+          <div class="modal-content">
+            <span class="close-button" id="closeButton">&times;</span>
+            <form id="contactUsForm">
+              <h2>Contact Us</h2>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required />
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
         <button class="menu-button">
           <img
             src="./images/Hamburger.svg"
@@ -366,5 +384,6 @@
         © 2024 - Present StudyNow. All rights reserved.
       </div>
     </div>
+    <script src="contact.js"></script>
   </body>
 </html>
