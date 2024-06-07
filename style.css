@@ -444,9 +444,8 @@ body {
 
 .newsletter-container {
   background-color: var(--background-color);
-
   max-width: 1280px;
-  height: 40vh;
+  height: 50vh;
   margin: 0 auto;
 }
 
