@@ -260,7 +260,10 @@ body {
   margin-top: 1rem;
   margin-bottom: 2rem;
   padding: 1.8rem 2.5rem;
-  animation: slideFromRight 1s ease forwards;
+  /* animation: slideFromRight 1s ease forwards; */
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 .company-logo {
   font-size: 1rem;
@@ -313,6 +316,18 @@ body {
   color: var(--gray);
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
 .feature-grid {
   display: grid;
   grid-gap: 2rem;
@@ -328,7 +343,13 @@ body {
   padding: 1.6rem;
   border-radius: 1rem;
   gap: 1rem;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
+
+
+
 .feature-info {
   display: flex;
   flex-direction: column;
@@ -440,6 +461,7 @@ body {
 .testimonial-desc {
   font-size: 0.875rem;
   color: #777;
+  text-align: center;
 }
 
 .newsletter-container {
@@ -684,6 +706,8 @@ ul {
 @media screen and (max-width: 850px) {
   .footer-top {
     padding-left: 1rem;
+    position: relative;
+    right: 1.8rem;
   }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
